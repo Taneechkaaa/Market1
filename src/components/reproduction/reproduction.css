@@ -1,0 +1,53 @@
+.reproduction-content {
+  width: 1140px;
+  margin: 40px 160px;
+}
+.reproduction-header {
+  color: #2c2d35;
+  margin-bottom: 30px;
+}
+.reproduction-author {
+  color: #86928b;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.reproduction-description {
+  color: #2c2d35;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+.reproduction-name {
+  color: #2c2d35;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+.reproduction-price {
+  color: #598d66;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.reproduction-btn {
+  color: #598d66;
+  padding: 21px 107px;
+  border: 2px solid #598d66;
+  background-color: #e1ede6;
+  width: 310px;
+  height: 65px;
+}
+
+.reproduction-card {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #e1ede6;
+  width: 350px;
+  margin: 0px;
+}
+
+.reproduction-pic {
+}

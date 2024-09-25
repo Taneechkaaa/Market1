@@ -1,0 +1,32 @@
+.navigation {
+  background-color: #e1ede6;
+  height: 100px;
+}
+.navigation-list {
+  /* width: 1110px; */
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0 160px;
+  align-items: center;
+  height: 100%;
+}
+
+.navigation-item-house {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+}
+
+.navigation-star {
+  width: 21px;
+  height: 21px;
+}
+
+.navigation-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 470px;
+}
