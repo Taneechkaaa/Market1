@@ -2,6 +2,12 @@
   max-width: 1140px;
   margin: 40px 160px;
 }
+.reproduction-card-content {
+  max-width: 1140px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
 .reproduction-header {
   color: #2c2d35;
   margin-bottom: 30px;
