@@ -1,5 +1,5 @@
 .reproduction-content {
-  width: 1140px;
+  max-width: 1140px;
   margin: 40px 160px;
 }
 .reproduction-header {

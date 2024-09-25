@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { House } from "./components/house/House";
-import { Reproduction } from "./components/reproduction/Reproduction";
-import { NewItems } from "./components/new/NewItems";
-import { About } from "./components/about/About";
-import { Frame } from "./components/frame/Frame";
-import Layout from "./components/layout/Layout";
+import { House } from "./pages/house/House";
+import { Reproduction } from "./pages/reproduction/Reproduction";
+import { NewItems } from "./pages/new/NewItems";
+import { About } from "./pages/about/About";
+import { Frame } from "./pages/frame/Frame";
+import Layout from "./pages/layout/Layout";
 
 function App() {
   return (
