@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./House.css";
 
 export const House = () => {
@@ -14,7 +15,10 @@ export const House = () => {
           Высокое качество отрисовки на плотной бумаге или льняном холсте.
           Редкие произведения, доступные цены.
         </p>
-        <button className="house-btn">Продукция</button>
+        <button className="house-btn">
+          {" "}
+          <Link to="/reproduction">Продукция</Link>
+        </button>
       </div>
     </div>
   );
