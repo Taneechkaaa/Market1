@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Card } from "../../components/card/Card";
-import { ReproductionCard } from "../../components/card/type";
+import { FILTER_BUTTONS, ReproductionCard } from "../../components/card/type";
 import "./reproduction.css";
 
 const REPRODUCTIONS: ReproductionCard[] = [
@@ -170,44 +170,47 @@ const REPRODUCTIONS: ReproductionCard[] = [
   },
 ];
 
+const FILTERBUTTONS: FILTER_BUTTONS[] = [
+  {
+    label: "France",
+    value: "france",
+  },
+  {
+    label: "Germany",
+    value: "germany",
+  },
+  {
+    label: "England",
+    value: "england",
+  },
+];
 export const Reproduction = () => {
   const [currentCountry, setCurrentCountry] = useState("france");
+
+  function updateFilters(country: string) {
+    setCurrentCountry(country);
+  }
+
+  function checkActiveClass(country: string) {
+    return currentCountry === country
+      ? "reproduction-activeBtn"
+      : "reproduction-btn";
+  }
   console.log(currentCountry);
   return (
     <div className="reproduction-content">
       <div className="reproduction-head">
         <h2 className="reproduction-header">Репродукции</h2>
         <div className="reproductionBtn-container">
-          <button
-            onClick={() => setCurrentCountry("france")}
-            className={
-              currentCountry === "france"
-                ? "reproduction-activeBtn"
-                : "reproduction-btn"
-            }
-          >
-            France
-          </button>
-          <button
-            onClick={() => setCurrentCountry("germany")}
-            className={
-              currentCountry === "germany"
-                ? "reproduction-activeBtn"
-                : "reproduction-btn"
-            }
-          >
-            Germany
-          </button>
-          <button
-            onClick={() => setCurrentCountry("england")}
-            className={
-              currentCountry === "england"
-                ? "reproduction-activeBtn"
-                : "reproduction-btn"
-            }
-          >
-            England
-          </button>
+          {FILTERBUTTONS.map((btn) => (
+            <button
+              key={btn.value}
+              onClick={() => updateFilters(btn.value)}
+              className={checkActiveClass(btn.value)}
+            >
+              {btn.label}
+            </button>
+          ))}
         </div>
       </div>
       <div className="reproduction-card-content">

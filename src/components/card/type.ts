@@ -7,3 +7,8 @@ export interface ReproductionCard {
   price: number;
   imgSrc: string;
 }
+
+export interface FILTER_BUTTONS {
+  label: string;
+  value: string;
+}
