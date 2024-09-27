@@ -2,6 +2,13 @@
   max-width: 1140px;
   margin: 40px 160px;
 }
+
+.reproduction-head {
+  display: flex;
+  gap: 63px;
+  align-items: center;
+  margin-bottom: 30px;
+}
 .reproduction-card-content {
   max-width: 1140px;
   display: grid;
@@ -9,8 +16,8 @@
   gap: 30px;
 }
 .reproduction-header {
+  justify-content: center;
   color: #2c2d35;
-  margin-bottom: 30px;
 }
 .reproduction-author {
   color: #86928b;
@@ -57,4 +64,26 @@
 
 .reproduction-pic {
   width: 310px;
+}
+
+.reproductionBtn-container {
+  display: flex;
+  gap: 32px;
+}
+.reproduction-activeBtn {
+  padding: 10px 20px;
+  width: 135px;
+  height: 43px;
+  background-color: #376b44;
+  color: #f4f6f5;
+  border-radius: 20px;
+}
+
+.reproduction-btn {
+  padding: 10px 20px;
+  width: 135px;
+  height: 43px;
+  background-color: #d4e8d9;
+  color: #2c2d35;
+  border-radius: 20px;
 }

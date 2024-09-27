@@ -1,4 +1,5 @@
 export interface ReproductionCard {
+  country: string;
   id: number;
   author: string;
   name: string;
