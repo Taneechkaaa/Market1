@@ -1,0 +1,8 @@
+.favorites-content {
+  margin: 30px 165px;
+}
+
+.favorites-header-container {
+  display: flex;
+  justify-content: space-between;
+}

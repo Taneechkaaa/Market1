@@ -1,5 +1,6 @@
 import { ReproductionCard } from "./type";
 import { useFrameContext } from "../../context/FrameContextProvider";
+import { useFavoriteContext } from "../../context/FavoritesContextProvider";
 
 interface Props {
   data: ReproductionCard;
@@ -9,9 +10,9 @@ export const Card = (props: Props) => {
   const { author, description, imgSrc, name, price, id } = data;
 
   const { addToFrame, frame } = useFrameContext();
-
+  const { addToFavorites, favorites } = useFavoriteContext();
   const handleClick = (card: ReproductionCard) => addToFrame(card);
-  // const handleClickFavorites = (card: ReproductionCard) => addToFavorires(card);
+  const handleClickFavorites = (card: ReproductionCard) => addToFavorites(card);
   return (
     <div className="reproduction-card">
       <img className="reproduction-pic" src={imgSrc} alt={description} />
@@ -23,17 +24,19 @@ export const Card = (props: Props) => {
         {!frame.some((card) => card.id === id) && (
           <button
             onClick={() => handleClick(data)}
-            className="reproduction-btn"
+            className="reproduction-btn reproduction-btn-frame"
           >
             В корзину
           </button>
         )}
-        <button
-          // onClick={() => handleClickFavorites(data)}
-          className="reproduction-btn"
-        >
-          В избранное
-        </button>
+        {!favorites.some((card) => card.id === id) && (
+          <button
+            onClick={() => handleClickFavorites(data)}
+            className="reproduction-btn reproduction-btn-favorites"
+          >
+            В избранное
+          </button>
+        )}
       </div>
     </div>
   );

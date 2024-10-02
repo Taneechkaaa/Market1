@@ -4,12 +4,16 @@ import { BrowserRouter } from "react-router-dom";
 
 import App from "./App.tsx";
 import { FrameContextProvider } from "./context/FrameContextProvider.tsx";
+import { FavoritesContextProvider } from "./context/FavoritesContextProvider.tsx";
+
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
-      <FrameContextProvider>
-        <App />
-      </FrameContextProvider>
+      <FavoritesContextProvider>
+        <FrameContextProvider>
+          <App />
+        </FrameContextProvider>
+      </FavoritesContextProvider>
     </BrowserRouter>
   </StrictMode>
 );

@@ -3,7 +3,6 @@
   height: 100px;
 }
 .navigation-list {
-  /* width: 1110px; */
   display: flex;
   justify-content: space-between;
   list-style-type: none;
@@ -24,6 +23,13 @@
   height: 21px;
 }
 
+.navigation-frame {
+  display: flex;
+}
+
+.navigation-frame-quantity {
+  color: red;
+}
 .navigation-container {
   display: flex;
   justify-content: space-around;

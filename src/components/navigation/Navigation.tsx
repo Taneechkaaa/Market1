@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 
 import "./Navigation.css";
+import { useFrameContext } from "../../context/FrameContextProvider";
 
 export const Navigation = () => {
+  const { frame } = useFrameContext();
+  const totalQuantity = frame.reduce((total) => total + 1, 0);
   return (
     <nav className="navigation">
       <ul className="navigation-list">
@@ -31,8 +34,15 @@ export const Navigation = () => {
           </li>
           <li className="navigation-item">
             {" "}
+            <Link to="/favorites">Избранное</Link>
+          </li>
+          <li className="navigation-item">
+            {" "}
             <Link to="/frame">
-              <img src="/header/header-frame.png" alt="" />
+              <div className="navigation-frame">
+                <img src="/header/header-frame.png" alt="" />
+                <p className="navigation-frame-quantity">{totalQuantity}</p>
+              </div>
             </Link>
           </li>
         </div>

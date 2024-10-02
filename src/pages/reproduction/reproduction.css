@@ -53,8 +53,9 @@
 }
 .reproduction-btn-container {
   display: flex;
-  justify-content: space-between;
+  gap: 40px;
 }
+
 .reproduction-card {
   padding-top: 20px;
   padding-bottom: 30px;

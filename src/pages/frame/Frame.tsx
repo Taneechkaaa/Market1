@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { CardFrame } from "../../components/card/CardFrame";
 import { useFrameContext } from "../../context/FrameContextProvider";
 
@@ -8,9 +9,9 @@ export const Frame = () => {
   const totalQuantity = frame.reduce((total, card) => total + card.price, 0);
   return (
     <div className="frame-content">
-      <button onClick={() => {}} className="frame-btn-favorites">
+      <Link className="frame-btn-favorites" to="/favorites">
         Избранные товары
-      </button>
+      </Link>
       <div className="frame-header-container">
         <h1 className="frame-header">Корзина товаров</h1>
         <button
