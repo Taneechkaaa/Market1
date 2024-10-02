@@ -1,0 +1,57 @@
+.cardFrame {
+  display: flex;
+  justify-content: space-between;
+}
+
+.frame-content {
+  margin: 30px 165px;
+}
+
+.frame-header-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.frame-header {
+  color: #2c2d35;
+}
+
+.frame-btn-favorites {
+  color: #598d66;
+  border: 2px solid #598d66;
+  background-color: #e1ede6;
+  border-radius: 20px;
+  padding: 5px 10px;
+  margin-bottom: 30px;
+}
+
+.frame-btn-delete {
+  color: #598d66;
+  padding: 10px 30px;
+  border: 2px solid #598d66;
+  background-color: #e1ede6;
+  border-radius: 20px;
+}
+
+.cardFrame-content {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.cardFrame-pic {
+  max-width: 100px;
+}
+
+.cardFrame-btn {
+  color: #598d66;
+  border: 2px solid #598d66;
+  background-color: #e1ede6;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+.frame-result {
+  display: flex;
+  justify-content: space-between;
+}

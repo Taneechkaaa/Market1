@@ -51,7 +51,10 @@
   width: 310px;
   height: 65px;
 }
-
+.reproduction-btn-container {
+  display: flex;
+  justify-content: space-between;
+}
 .reproduction-card {
   padding-top: 20px;
   padding-bottom: 30px;
