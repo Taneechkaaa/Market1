@@ -91,3 +91,7 @@
   color: #2c2d35;
   border-radius: 20px;
 }
+
+.selectedPrice {
+  margin-left: auto;
+}

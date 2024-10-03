@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { Card } from "../../components/card/Card";
 import { FILTER_BUTTONS, ReproductionCard } from "../../components/card/type";
 import "./reproduction.css";
@@ -186,6 +186,7 @@ const FILTERBUTTONS: FILTER_BUTTONS[] = [
 ];
 export const Reproduction = () => {
   const [currentCountry, setCurrentCountry] = useState("france");
+  const [selectedPrice, setSelectedPrice] = useState("range1");
 
   function updateFilters(country: string) {
     setCurrentCountry(country);
@@ -196,7 +197,33 @@ export const Reproduction = () => {
       ? "reproduction-activeBtn"
       : "reproduction-btn";
   }
-  console.log(currentCountry);
+
+  function updatePriceFilter(e: ChangeEvent<HTMLSelectElement>) {
+    setSelectedPrice(e.target.value);
+  }
+
+  const filteredReproductions = REPRODUCTIONS.filter((card) => {
+    const isCountryMatch = card.country === currentCountry;
+
+    let isPriceMatch = false;
+    switch (selectedPrice) {
+      case "range1":
+        isPriceMatch = card.price > 0;
+        break;
+      case "range2":
+        isPriceMatch = card.price < 15000;
+        break;
+      case "range3":
+        isPriceMatch = card.price >= 15000 && card.price <= 20000;
+        break;
+      case "range4":
+        isPriceMatch = card.price > 20000;
+        break;
+    }
+
+    return isCountryMatch && isPriceMatch;
+  });
+
   return (
     <div className="reproduction-content">
       <div className="reproduction-head">
@@ -212,13 +239,22 @@ export const Reproduction = () => {
             </button>
           ))}
         </div>
+        <div className="selectedPrice">
+          <label>
+            Цена:
+            <select value={selectedPrice} onChange={updatePriceFilter}>
+              <option value="range1">не выбрано</option>
+              <option value="range2">до 15000 руб.</option>
+              <option value="range3">15000 - 20000 руб.</option>
+              <option value="range4">более 20000 руб.</option>
+            </select>
+          </label>
+        </div>
       </div>
       <div className="reproduction-card-content">
-        {REPRODUCTIONS.filter((card) => card.country === currentCountry).map(
-          (card) => (
-            <Card data={card} key={card.id} />
-          )
-        )}
+        {filteredReproductions.map((card) => (
+          <Card data={card} key={card.id} />
+        ))}
       </div>
     </div>
   );
