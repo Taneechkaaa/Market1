@@ -36,3 +36,14 @@
   align-items: center;
   width: 470px;
 }
+
+.phone-call-img {
+  width: 28px;
+  height: 28px;
+  margin-top: 5px;
+}
+
+.navigation-phone-btn {
+  background: none;
+  border: none;
+}

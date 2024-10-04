@@ -2,10 +2,22 @@ import { Link } from "react-router-dom";
 
 import "./Navigation.css";
 import { useFrameContext } from "../../context/FrameContextProvider";
+import { useState } from "react";
+import { ModalWindow } from "../modal/ModalWindow";
 
 export const Navigation = () => {
   const { frame } = useFrameContext();
   const totalQuantity = frame.reduce((total) => total + 1, 0);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+
   return (
     <nav className="navigation">
       <ul className="navigation-list">
@@ -45,8 +57,19 @@ export const Navigation = () => {
               </div>
             </Link>
           </li>
+          <li className="navigation-item ">
+            {" "}
+            <button onClick={openModal} className="navigation-phone-btn">
+              <img
+                className="phone-call-img"
+                src="/header/header-phone.png"
+                alt=""
+              />
+            </button>
+          </li>
         </div>
       </ul>
+      <ModalWindow isOpen={modalIsOpen} onClose={closeModal} />
     </nav>
   );
 };
