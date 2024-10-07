@@ -28,7 +28,7 @@ export const Navigation = () => {
             src="/header/header-star.png"
             alt=""
           />
-          <Link to="/house">lnk.House</Link>
+          <Link to="/">lnk.House</Link>
         </li>
 
         <div className="navigation-container">
